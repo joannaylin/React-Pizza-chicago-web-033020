@@ -23,14 +23,12 @@ class App extends Component {
   };
 
   handleChange = (event) => {
-    console.log(event.target.name)
-    console.log(event.target.value)
     let value = event.target.value
     if (event.target.name==="vegetarian") {
       value = "Vegetarian"
     }
     this.setState({
-      edit: {...this.state.edit, [event.target.name]: event.target.value}
+      edit: {...this.state.edit, [event.target.name]: value}
     })
   };
 
