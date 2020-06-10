@@ -2,13 +2,13 @@
   "pizzas": [
     {
       "id": 1,
-      "topping": "Pla",
+      "topping": "SUsdf",
       "size": "Small",
       "vegetarian": true
     },
     {
       "id": 2,
-      "topping": "Pepperoni",
+      "topping": "Pepper",
       "size": "Small",
       "vegetarian": false
     },

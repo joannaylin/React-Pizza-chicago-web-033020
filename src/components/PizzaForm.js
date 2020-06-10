@@ -1,7 +1,6 @@
 import React from "react";
 
 const PizzaForm = (props) => {
-  const { topping, size, vegetarian } = props.pizza;
   return (
       <div className="form-row">
         <div className="col-5">
@@ -10,13 +9,13 @@ const PizzaForm = (props) => {
             className="form-control"
             placeholder="Pizza Topping"
             name="topping"
-            value={topping}
+            value={props.pizza.topping}
             onChange={props.handleChange}
           />
         </div>
         <div className="col">
           <select
-            value={size}
+            value={props.pizza.size}
             className="form-control"
             name="size"
             onChange={props.handleChange}
@@ -33,7 +32,7 @@ const PizzaForm = (props) => {
               type="radio"
               value="Vegetarian"
               name="vegetarian"
-              checked={vegetarian && true}
+              checked={props.pizza.vegetarian}
               onChange={props.handleChange}
             />
             <label className="form-check-label">Vegetarian</label>
@@ -44,7 +43,7 @@ const PizzaForm = (props) => {
               type="radio"
               value="Not Vegetarian"
               name="vegetarian"
-              checked={!vegetarian && true}
+              checked={!props.pizza.vegetarian}
               onChange={props.handleChange}
             />
             <label className="form-check-label">Not Vegetarian</label>

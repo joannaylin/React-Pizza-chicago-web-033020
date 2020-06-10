@@ -24,17 +24,18 @@ class App extends Component {
 
   handleChange = (event) => {
     let value = event.target.value
-    if (event.target.name==="vegetarian") {
-      value = "Vegetarian"
+    let name =event.target.name
+    if (name === "vegetarian") {
+      value === "Vegetarian" ? (value=true) : (value=false)
     }
     this.setState({
-      edit: {...this.state.edit, [event.target.name]: value}
+      edit: {...this.state.edit, [name]: value}
     })
   };
 
   handleSubmit = (event) => {
     const updatedPizza = this.state.edit
-    
+
     const formObj = {
       method: "PATCH",
       headers: {
@@ -48,7 +49,8 @@ class App extends Component {
     .then(json => {
       const updatedPizzaList = this.state.pizzas.map(pizza=> pizza.id === json.id ? json : pizza)
       this.setState({
-        pizzas: updatedPizzaList
+        pizzas: updatedPizzaList,
+        edit: {}
       })
     })
 
